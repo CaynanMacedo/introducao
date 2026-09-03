@@ -1,27 +1,22 @@
+import { use, useState } from "react"
 
 function App() {
-  
-  let nome = "caynan"
-  let sobrenome = "Macedo"
-  let nome_completo = nome +" "+ sobrenome
-  let clicks = 0
 
-  function aumentarClicks(){
-    clicks += 1 
+  let [nome, setnome] = useState("Aguardando...")
+
+  function mudarNome(){
+    setnome("Caynan")
   }
 
   
   return ( 
   
     <div>
-      <h1>Hello {2+2} you</h1>
-      <p>Estou aprend{console.log("foda-se")}endo React XD</p>
-      <p>Meu nome é {nome} meu sobrenome é {sobrenome} meu nome completo é {nome_completo} </p>
+      <h1>Hello World</h1>
+      <p>Estou aprendendo React XD</p>
 
-      <hr/>
-
-      <p>Voce clickou {clicks} vezes</p>
-      <button onClick={aumentarClicks} >Clique em Mim</button>
+      <p>Meu nome é {nome}</p>
+      <button onClick={ mudarNome } >Carregar nome</button>
     
     </div>
   )
