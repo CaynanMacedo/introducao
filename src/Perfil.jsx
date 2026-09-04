@@ -2,7 +2,7 @@ import { useState } from "react"
 
 function Perfil(){
 
-    let [handleprofile, sethandleprofile] = useState(false)
+    let [handleprofile, sethandleProfile] = useState(false)
     let usuario = {
         nome: "Caynan",
         email: "heilagvagga@gmail.com",
@@ -16,13 +16,20 @@ return(
 
         <h1>Perfil de usuario</h1>
         <p>veja aqui sua informações do perfil</p>
-        <button>Carregar Perfil</button>
+        
+        <button onClick={ () => sethandleProfile( !handleprofile ) } >Carregar Perfil</button>
+                
+        {
+            handleprofile == true ?
+                <div>
+                    <p>Nome: {usuario.nome} </p>
+                    <p>E-mail: {usuario.email} </p>
+                    <button>Alterar Senha</button>
+                </div>
+            :
+                <p> </p>
+        }
 
-        <div>
-            <p>Nome: {usuario.nome} </p>
-            <p>E-mail: {usuario.email} </p>
-            <button>Alterar Senha</button>
-        </div>
     
     </div>
 
